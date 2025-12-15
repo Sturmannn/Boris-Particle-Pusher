@@ -1,21 +1,20 @@
-// filepath: 
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include <iomanip> // для форматированного вывода
+#include <iomanip>
 
 namespace bp
 {
 
 // ==========================================
-// 1. Базовые структуры
+//  Базовые структуры
 // ==========================================
 
 // Физические константы в СИ
-const double C_LIGHT = 299792458.0;       // Скорость света, м/с
-const double MASS_E = 9.10938356e-31;     // Масса электрона, кг
-const double Q_E = -1.60217662e-19;       // Заряд электрона, Кл
-const double PI = 3.141592653589793;
+constexpr double C_LIGHT = 299792458.0;       // Скорость света, м/с
+constexpr double MASS_E = 9.10938356e-31;     // Масса электрона, кг
+constexpr double Q_E = -1.60217662e-19;       // Заряд электрона, Кл
+constexpr double PI = 3.141592653589793;
 
 struct Vec3 {
     double x = 0.0, y = 0.0, z = 0.0;
@@ -41,7 +40,7 @@ Vec3 cross(const Vec3& a, const Vec3& b) {
 }
 
 // ==========================================
-// 2. Структура Частицы
+//  Структура Частицы
 // ==========================================
 struct Particle {
     Vec3 pos;   // Позиция r
@@ -82,7 +81,7 @@ struct Field {
 };
 
 // ==========================================
-// 3. Алгоритм Бориса (Pusher)
+//  Алгоритм Бориса (Pusher)
 // ==========================================
 void BorisPusher(Particle& p, const Field& f, double dt) 
 {
@@ -128,7 +127,7 @@ void BorisPusher(Particle& p, const Field& f, double dt)
 }
 
 // ==========================================
-// 4. Тестовые функции
+//  Тестовые функции
 // ==========================================
 
 void Test_RelativisticAcceleration() {
@@ -136,7 +135,7 @@ void Test_RelativisticAcceleration() {
 
     // --- Начальные условия ---
     double E0 = 1e8; // В/м
-    int N = 10000;   // Количество шагов
+    size_t N = 10000;   // Количество шагов
 
     Particle electron({0,0,0}, {0,0,0}, Q_E, MASS_E);
     Field field = { {E0, 0, 0}, {0, 0, 0} }; // E по оси X
@@ -148,7 +147,7 @@ void Test_RelativisticAcceleration() {
     double dt = total_time_analytical / N;
 
     // --- Цикл симуляции ---
-    for(int i = 0; i < N; ++i) {
+    for(size_t i = 0; i < N; ++i) {
         BorisPusher(electron, field, dt);
     }
 
@@ -167,7 +166,6 @@ void Test_RelativisticAcceleration() {
     Vec3 r_final_sim = electron.pos;
     Vec3 p_final_sim = electron.getMomentumPhys();
 
-    std::cout << std::fixed << std::setprecision(6);
     std::cout << "Конечное положение (симуляция): x = " << r_final_sim.x << std::endl;
     std::cout << "Конечное положение (аналитика): x = " << r_final_x_analytical << std::endl;
     std::cout << "Относительная погрешность (положение): " << std::abs(r_final_sim.x - r_final_x_analytical) / std::abs(r_final_x_analytical) << std::endl << std::endl;
@@ -182,7 +180,7 @@ void Test_MagneticOscillation() {
 
     // --- Начальные условия ---
     double B0 = 1.0; // Тесла
-    int N = 10000;   // Количество шагов
+    size_t N = 10000;   // Количество шагов
     // Начальный импульс p_start = (p0, 0, 0)
     double p0_mag = MASS_E * C_LIGHT * 1.0; 
 
@@ -191,6 +189,7 @@ void Test_MagneticOscillation() {
 
     // --- Выбор dt ---
     // Период вращения T = 2*pi*gamma*m / (|q|*B)
+    // Это формула для релятивистского циклотронного периода
     double initial_gamma = electron.gamma;
     double period = (2.0 * PI * initial_gamma * MASS_E) / (std::abs(Q_E) * B0);
     // Половина оборота
@@ -198,25 +197,23 @@ void Test_MagneticOscillation() {
     double dt = total_time / N;
     
     // --- Цикл симуляции ---
-    for(int i = 0; i < N; ++i) {
+    for(size_t i = 0; i < N; ++i) {
         BorisPusher(electron, field, dt);
     }
     
     // --- Аналитический результат (для половины оборота) ---
     // Электрон начинает в (0,0), v=(v0, 0, 0). B=(0, 0, B0).
     // Сила F = q(v x B). q<0. v x B = -y. F направлена в +y.
-    // Траектория - полукруг в плоскости XY с положительным Y.
-    // Диаметр D = 2 * R_Larmor = 2 * p / (|q| B)
     double r_final_y_analytical = 2.0 * p0_mag / (std::abs(Q_E) * B0);
     
     // Импульс разворачивается на 180 градусов: (p0, 0, 0) -> (-p0, 0, 0)
+    // потому что время симуляции в этом тесте специально установлено равным половине периода вращения частицы.
     double p_final_x_analytical = -p0_mag;
 
     // --- Сравнение ---
     Vec3 r_final_sim = electron.pos;
     Vec3 p_final_sim = electron.getMomentumPhys();
 
-    std::cout << std::fixed << std::setprecision(6);
     std::cout << "Конечное положение (симуляция): y = " << r_final_sim.y << std::endl;
     std::cout << "Конечное положение (аналитика): y = " << r_final_y_analytical << std::endl;
     std::cout << "Относительная погрешность (положение): " << std::abs(r_final_sim.y - r_final_y_analytical) / std::abs(r_final_y_analytical) << std::endl << std::endl;
@@ -228,10 +225,7 @@ void Test_MagneticOscillation() {
 
 } // namespace bp
 
-// ==========================================
-// 5. Главная функция
-// ==========================================
-int main() {
+int main(int argc, char** argv) {
     bp::Test_RelativisticAcceleration();
     bp::Test_MagneticOscillation();
 
