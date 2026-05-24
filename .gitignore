@@ -1,5 +1,8 @@
 build
 bin
+.vscode
+.env
+3rdparty
 
 # Prerequisites
 *.d
