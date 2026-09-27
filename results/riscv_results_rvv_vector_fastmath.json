@@ -1,0 +1,154 @@
+{
+  "context": {
+    "date": "2026-06-14T17:56:51+00:00",
+    "host_name": "k1node3",
+    "executable": "/home/durandin_v/Projects/BorisParticlePusher/results/PerfTest_riscv_rvv_vector_fastmath",
+    "num_cpus": 8,
+    "mhz_per_cpu": 1600,
+    "cpu_scaling_enabled": false,
+    "caches": [
+      {
+        "type": "Instruction",
+        "level": 1,
+        "size": 32768,
+        "num_sharing": 1
+      },
+      {
+        "type": "Data",
+        "level": 1,
+        "size": 32768,
+        "num_sharing": 1
+      },
+      {
+        "type": "Unified",
+        "level": 2,
+        "size": 524288,
+        "num_sharing": 4
+      }
+    ],
+    "load_avg": [6.62842,5.03662,4.26514],
+    "library_build_type": "release"
+  },
+  "benchmarks": [
+    {
+      "name": "PusherAoS_Fixture/pusher/1000000/1000/1/iterations:1",
+      "family_index": 0,
+      "per_family_instance_index": 0,
+      "run_name": "PusherAoS_Fixture/pusher/1000000/1000/1/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 1.5201375043601729e+02,
+      "cpu_time": 1.5194686551400000e+02,
+      "time_unit": "s",
+      "MParticles/s": 6.5812479686055951e+00
+    },
+    {
+      "name": "PusherAoS_Fixture/pusher/1000000/1000/2/iterations:1",
+      "family_index": 0,
+      "per_family_instance_index": 1,
+      "run_name": "PusherAoS_Fixture/pusher/1000000/1000/2/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 7.6077886559069157e+01,
+      "cpu_time": 7.6050733516999998e+01,
+      "time_unit": "s",
+      "MParticles/s": 1.3149117092690039e+01
+    },
+    {
+      "name": "PusherAoS_Fixture/pusher/1000000/1000/4/iterations:1",
+      "family_index": 0,
+      "per_family_instance_index": 2,
+      "run_name": "PusherAoS_Fixture/pusher/1000000/1000/4/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 3.8911735345842317e+01,
+      "cpu_time": 3.8887947903999986e+01,
+      "time_unit": "s",
+      "MParticles/s": 2.5714907931594425e+01
+    },
+    {
+      "name": "PusherAoS_Fixture/pusher/1000000/1000/8/iterations:1",
+      "family_index": 0,
+      "per_family_instance_index": 3,
+      "run_name": "PusherAoS_Fixture/pusher/1000000/1000/8/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 3.9217145100003108e+01,
+      "cpu_time": 3.5164364465999995e+01,
+      "time_unit": "s",
+      "MParticles/s": 2.8437880655198192e+01
+    },
+    {
+      "name": "PusherSoA_Fixture/pusher/1000000/1000/1/iterations:1",
+      "family_index": 1,
+      "per_family_instance_index": 0,
+      "run_name": "PusherSoA_Fixture/pusher/1000000/1000/1/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 1.0400329992594197e+02,
+      "cpu_time": 1.0396929043500000e+02,
+      "time_unit": "s",
+      "MParticles/s": 9.6182247259365941e+00
+    },
+    {
+      "name": "PusherSoA_Fixture/pusher/1000000/1000/2/iterations:1",
+      "family_index": 1,
+      "per_family_instance_index": 1,
+      "run_name": "PusherSoA_Fixture/pusher/1000000/1000/2/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 5.2893088783137500e+01,
+      "cpu_time": 5.2873932878999995e+01,
+      "time_unit": "s",
+      "MParticles/s": 1.8912911250397475e+01
+    },
+    {
+      "name": "PusherSoA_Fixture/pusher/1000000/1000/4/iterations:1",
+      "family_index": 1,
+      "per_family_instance_index": 2,
+      "run_name": "PusherSoA_Fixture/pusher/1000000/1000/4/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 3.3076274279970676e+01,
+      "cpu_time": 3.3055233631000021e+01,
+      "time_unit": "s",
+      "MParticles/s": 3.0252395465212356e+01
+    },
+    {
+      "name": "PusherSoA_Fixture/pusher/1000000/1000/8/iterations:1",
+      "family_index": 1,
+      "per_family_instance_index": 3,
+      "run_name": "PusherSoA_Fixture/pusher/1000000/1000/8/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 2.5742758024949580e+01,
+      "cpu_time": 2.5657905070000027e+01,
+      "time_unit": "s",
+      "MParticles/s": 3.8974343278291620e+01
+    }
+  ]
+}

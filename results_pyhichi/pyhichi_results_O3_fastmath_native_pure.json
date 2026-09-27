@@ -1,0 +1,208 @@
+{
+  "context": {
+    "date": "2026-06-07T21:57:37+03:00",
+    "host_name": "node1.nngu",
+    "executable": "/home/durandin_v/Projects/results_pyhichi/PerfTest_pyhichi_O3_fastmath_native",
+    "num_cpus": 40,
+    "mhz_per_cpu": 3400,
+    "cpu_scaling_enabled": true,
+    "caches": [
+      {
+        "type": "Data",
+        "level": 1,
+        "size": 49152,
+        "num_sharing": 2
+      },
+      {
+        "type": "Instruction",
+        "level": 1,
+        "size": 32768,
+        "num_sharing": 2
+      },
+      {
+        "type": "Unified",
+        "level": 2,
+        "size": 1310720,
+        "num_sharing": 2
+      },
+      {
+        "type": "Unified",
+        "level": 3,
+        "size": 15728640,
+        "num_sharing": 20
+      }
+    ],
+    "load_avg": [5.68,4.68,4.02],
+    "library_build_type": "release"
+  },
+  "benchmarks": [
+    {
+      "name": "particleArrayAoS/pusher/1000000/1000/1/iterations:1",
+      "run_name": "particleArrayAoS/pusher/1000000/1000/1/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 1.7353072914294899e+01,
+      "cpu_time": 1.7312207100999998e+01,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArrayAoS/pusher/1000000/1000/2/iterations:1",
+      "run_name": "particleArrayAoS/pusher/1000000/1000/2/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 9.2422395376488566e+00,
+      "cpu_time": 9.1984018240000012e+00,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArrayAoS/pusher/1000000/1000/4/iterations:1",
+      "run_name": "particleArrayAoS/pusher/1000000/1000/4/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 5.8160243481397629e+00,
+      "cpu_time": 5.7824944920000014e+00,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArrayAoS/pusher/1000000/1000/8/iterations:1",
+      "run_name": "particleArrayAoS/pusher/1000000/1000/8/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 4.0558542357757688e+00,
+      "cpu_time": 4.0434734079999970e+00,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArrayAoS/pusher/1000000/1000/16/iterations:1",
+      "run_name": "particleArrayAoS/pusher/1000000/1000/16/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 4.9201278397813439e+00,
+      "cpu_time": 4.9077010819999956e+00,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArrayAoS/pusher/1000000/1000/32/iterations:1",
+      "run_name": "particleArrayAoS/pusher/1000000/1000/32/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 3.9582318449392915e+00,
+      "cpu_time": 3.9483665539999961e+00,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArrayAoS/pusher/1000000/1000/40/iterations:1",
+      "run_name": "particleArrayAoS/pusher/1000000/1000/40/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 4.8758524218574166e+00,
+      "cpu_time": 4.8637604539999941e+00,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArraySoA/pusher/1000000/1000/1/iterations:1",
+      "run_name": "particleArraySoA/pusher/1000000/1000/1/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 2.2320752238854766e+01,
+      "cpu_time": 2.2268169841000002e+01,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArraySoA/pusher/1000000/1000/2/iterations:1",
+      "run_name": "particleArraySoA/pusher/1000000/1000/2/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 1.2047821576707065e+01,
+      "cpu_time": 1.1880239405000012e+01,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArraySoA/pusher/1000000/1000/4/iterations:1",
+      "run_name": "particleArraySoA/pusher/1000000/1000/4/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 6.6869523972272873e+00,
+      "cpu_time": 6.6678917039999988e+00,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArraySoA/pusher/1000000/1000/8/iterations:1",
+      "run_name": "particleArraySoA/pusher/1000000/1000/8/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 4.5322081269696355e+00,
+      "cpu_time": 4.4955513489999959e+00,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArraySoA/pusher/1000000/1000/16/iterations:1",
+      "run_name": "particleArraySoA/pusher/1000000/1000/16/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 3.5300088152289391e+00,
+      "cpu_time": 3.5216803060000075e+00,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArraySoA/pusher/1000000/1000/32/iterations:1",
+      "run_name": "particleArraySoA/pusher/1000000/1000/32/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 3.6121702371165156e+00,
+      "cpu_time": 3.6005376969999929e+00,
+      "time_unit": "s"
+    },
+    {
+      "name": "particleArraySoA/pusher/1000000/1000/40/iterations:1",
+      "run_name": "particleArraySoA/pusher/1000000/1000/40/iterations:1",
+      "run_type": "iteration",
+      "repetitions": 0,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1,
+      "real_time": 3.0945020793005824e+00,
+      "cpu_time": 3.0741000980000024e+00,
+      "time_unit": "s"
+    }
+  ]
+}
